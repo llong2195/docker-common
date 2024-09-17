@@ -1,8 +1,7 @@
-# docker-data
 
-## Mysql replication
+# Mysql replication
 
-### Mysql Master
+## Mysql Master
 Login mysql
 ```
 mysql -uroot -p
@@ -20,7 +19,7 @@ FLUSH PRIVILEGES;
 ```
 
 
-### Mysql Slave
+## Mysql Slave
 Show replica
 ```
 SHOW REPLICA STATUS\G;
