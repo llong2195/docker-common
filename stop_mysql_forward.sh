@@ -16,3 +16,6 @@ for PORT in "${PORTS[@]}"; do
 done
 
 echo "✅ Tất cả đã được dừng (nếu có)."
+
+# pkill -f socat
+# ps aux | grep '[s]ocat'
