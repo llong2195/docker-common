@@ -23,8 +23,12 @@ while read -r ALIAS LOCAL_PORT TARGET_HOST TARGET_PORT; do
   fi
 
   # Chạy socat dưới nền
+  echo "   ↳ Đang khởi chạy tiến trình mới..."
   nohup socat TCP-LISTEN:$LOCAL_PORT,fork,reuseaddr TCP:$TARGET_HOST:$TARGET_PORT > /dev/null 2>&1 &
+  echo "   ↳ Khởi chạy thành công (PID=$!)"
+  echo "   ✅ Hoàn tất. $ALIAS: localhost:$LOCAL_PORT ⇨ $TARGET_HOST:$TARGET_PORT"
 
 done <<< "$FORWARDS_LIST"
 
 echo "✅ Hoàn tất. Có thể kết nối qua IP server-dev và các port tương ứng."
+
